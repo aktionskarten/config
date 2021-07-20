@@ -1,7 +1,7 @@
 {
   "options": {
     "paths": {
-      "root": "/root/config/tileserver-gl",
+      "root": "/data",
       "fonts": "fonts",
       "styles": "styles",
       "mbtiles": "tiles"
