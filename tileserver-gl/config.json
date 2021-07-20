@@ -1,0 +1,54 @@
+{
+  "options": {
+    "paths": {
+      "root": "/root/config/tileserver-gl",
+      "fonts": "fonts",
+      "styles": "styles",
+      "mbtiles": "tiles"
+    },
+    "maxScaleFactor": 4,
+    "maxSize": 8096
+  },
+  "styles": {
+    "basic-preview": {
+      "style": "basic-preview/style.json",
+      "tilejson": {
+        "bounds": [
+          12.26,
+          51.849,
+          14.699,
+          52.994
+        ]
+      }
+    },
+    "dark-matter": {
+      "style": "styles/dark-matter-gl-style/style-local.json",
+      "serve_rendered": true
+    },
+    "positron": {
+      "style": "styles/positron-gl-style/style-local.json",
+      "serve_rendered": true
+    },
+    "osm-bright": {
+      "style": "styles/osm-bright-gl-style/style-local.json",
+      "serve_rendered": true
+    },
+    "maptiler-toner": {
+      "style": "styles/maptiler-toner-gl-style/style-local.json",
+      "serve_rendered": true
+    },
+    "maptiler-3d": {
+      "style": "styles/maptiler-3d-gl-style/style-local.json",
+      "serve_rendered": true
+    },
+    "osm-liberty": {
+      "style": "styles/osm-liberty/style-local.json",
+      "serve_rendered": true
+    }
+  },
+  "data": {
+    "v3": {
+      "mbtiles": "osm-2017-07-03-v3.6.1-europe_germany.mbtiles"
+    }
+  }
+}

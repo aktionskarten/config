@@ -1,0 +1,18 @@
+[submodule "tileserver-gl/styles/dark-matter-gl-style"]
+	path = tileserver-gl/styles/dark-matter-gl-style
+	url = https://github.com/openmaptiles/dark-matter-gl-style.git
+[submodule "tileserver-gl/styles/positron-gl-style"]
+	path = tileserver-gl/styles/positron-gl-style
+	url = https://github.com/openmaptiles/positron-gl-style.git
+[submodule "tileserver-gl/styles/osm-bright-gl-style"]
+	path = tileserver-gl/styles/osm-bright-gl-style
+	url = https://github.com/openmaptiles/osm-bright-gl-style.git
+[submodule "tileserver-gl/styles/maptiler-toner-gl-style"]
+	path = tileserver-gl/styles/maptiler-toner-gl-style
+	url = https://github.com/openmaptiles/maptiler-toner-gl-style.git
+[submodule "tileserver-gl/styles/maptiler-3d-gl-style"]
+	path = tileserver-gl/styles/maptiler-3d-gl-style
+	url = https://github.com/openmaptiles/maptiler-3d-gl-style.git
+[submodule "tileserver-gl/styles/osm-liberty"]
+	path = tileserver-gl/styles/osm-liberty
+	url = https://github.com/maputnik/osm-liberty.git
