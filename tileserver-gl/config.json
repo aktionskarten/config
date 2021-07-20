@@ -22,27 +22,27 @@
       }
     },
     "dark-matter": {
-      "style": "styles/dark-matter-gl-style/style.json",
+      "style": "dark-matter-gl-style/style.json",
       "serve_rendered": true
     },
     "positron": {
-      "style": "styles/positron-gl-style/style.json",
+      "style": "positron-gl-style/style.json",
       "serve_rendered": true
     },
     "osm-bright": {
-      "style": "styles/osm-bright-gl-style/style.json",
+      "style": "osm-bright-gl-style/style.json",
       "serve_rendered": true
     },
     "maptiler-toner": {
-      "style": "styles/maptiler-toner-gl-style/style.json",
+      "style": "maptiler-toner-gl-style/style.json",
       "serve_rendered": true
     },
     "maptiler-3d": {
-      "style": "styles/maptiler-3d-gl-style/style.json",
+      "style": "maptiler-3d-gl-style/style.json",
       "serve_rendered": true
     },
     "osm-liberty": {
-      "style": "styles/osm-liberty/style.json",
+      "style": "osm-liberty/style.json",
       "serve_rendered": true
     }
   },
