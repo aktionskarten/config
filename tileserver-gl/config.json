@@ -22,27 +22,27 @@
       }
     },
     "dark-matter": {
-      "style": "styles/dark-matter-gl-style/style-local.json",
+      "style": "styles/dark-matter-gl-style/style.json",
       "serve_rendered": true
     },
     "positron": {
-      "style": "styles/positron-gl-style/style-local.json",
+      "style": "styles/positron-gl-style/style.json",
       "serve_rendered": true
     },
     "osm-bright": {
-      "style": "styles/osm-bright-gl-style/style-local.json",
+      "style": "styles/osm-bright-gl-style/style.json",
       "serve_rendered": true
     },
     "maptiler-toner": {
-      "style": "styles/maptiler-toner-gl-style/style-local.json",
+      "style": "styles/maptiler-toner-gl-style/style.json",
       "serve_rendered": true
     },
     "maptiler-3d": {
-      "style": "styles/maptiler-3d-gl-style/style-local.json",
+      "style": "styles/maptiler-3d-gl-style/style.json",
       "serve_rendered": true
     },
     "osm-liberty": {
-      "style": "styles/osm-liberty/style-local.json",
+      "style": "styles/osm-liberty/style.json",
       "serve_rendered": true
     }
   },
