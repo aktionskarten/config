@@ -7,9 +7,9 @@
 [submodule "tileserver-gl/styles/osm-bright-gl-style"]
 	path = tileserver-gl/styles/osm-bright-gl-style
 	url = https://github.com/aktionskarten/osm-bright-gl-style.git
-[submodule "tileserver-gl/styles/osm-liberty"]
-	path = tileserver-gl/styles/osm-liberty
-	url = https://github.com/aktionskarten/osm-liberty.git
+[submodule "tileserver-gl/styles/osm-liberty-gl-style"]
+	path = tileserver-gl/styles/osm-liberty-gl-style
+	url = https://github.com/aktionskarten/osm-liberty-gl-style.git
 [submodule "tileserver-gl/styles/tileserver-gl-styles"]
 	path = tileserver-gl/styles/tileserver-gl-styles
 	url = https://github.com/klokantech/tileserver-gl-styles.git

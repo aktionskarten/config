@@ -33,16 +33,8 @@
       "style": "osm-bright-gl-style/style.json",
       "serve_rendered": true
     },
-    "maptiler-toner": {
-      "style": "maptiler-toner-gl-style/style.json",
-      "serve_rendered": true
-    },
-    "maptiler-3d": {
-      "style": "maptiler-3d-gl-style/style.json",
-      "serve_rendered": true
-    },
     "osm-liberty": {
-      "style": "osm-liberty/style.json",
+      "style": "osm-liberty-gl-style/style.json",
       "serve_rendered": true
     }
   },
