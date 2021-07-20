@@ -1,5 +1,8 @@
 # config
 
+## server
+Run `installDependencies.sh` to install git, docker, docker-compose etc.
+
 ## tileserver-ng
 ### Styles
 Styles are added as submodules  
