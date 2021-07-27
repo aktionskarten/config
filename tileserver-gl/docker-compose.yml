@@ -1,0 +1,8 @@
+version: "0.1"
+services:
+  tileserver-gl:
+    image: "kombinat451/tileserver-gl"
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/data
