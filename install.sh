@@ -23,12 +23,8 @@ cd $SCRIPT_DIR
 git submodule update --init --recursive
 
 # set up systemctl docker script
-cd server
-ln -s docker-compose@.service /etc/systemd/system/docker-compose@.service
 mkdir -p /etc/docker/compose
-cd ..
-
-cd tileserver-gl
-ln -s . /etc/docker/compose/tileserver-gl
+ln -s $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
+ln -s $SCRIPT_DIR/tileserver-gl /etc/docker/compose/tileserver-gl
 
 cd $PWD_DIR
