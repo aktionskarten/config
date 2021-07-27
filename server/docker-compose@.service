@@ -1,0 +1,34 @@
+[Unit]
+Description=%i service with docker compose
+Requires=docker.service
+After=docker.service
+
+# To manage different services provided in docker-compose files there is a
+# `docker-compose@.service` unit file in `/etc/systemd/system/`.
+# To start/stop/enable docker services place a symlink to a folder containing a
+# `docker-compose.yml` in `/etc/docker/compose` after that you can control this
+# `docker-compose` service with
+# `systemctl [start|stop] docker-compose@[folder-name]`.
+
+[Service]
+Restart=always
+
+WorkingDirectory=/etc/docker/compose/%i
+
+# Remove old containers, images and volumes
+ExecStartPre=/usr/local/bin/docker-compose down -v
+ExecStartPre=/usr/local/bin/docker-compose rm -fv
+ExecStartPre=-/bin/bash -c 'docker volume ls -qf "name=%i_" | xargs docker volume rm'
+ExecStartPre=-/bin/bash -c 'docker network ls -qf "name=%i_" | xargs docker network rm'
+ExecStartPre=-/bin/bash -c 'docker ps -aqf "name=%i_*" | xargs docker rm'
+
+# Compose up
+ExecStart=/usr/local/bin/docker-compose up
+
+# Compose down, remove containers and volumes
+ExecStop=/usr/local/bin/docker-compose down -v
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=docker.service
+
