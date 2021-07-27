@@ -29,4 +29,8 @@ ln -s $SCRIPT_DIR/tileserver-gl /etc/docker/compose/tileserver-gl
 
 systemctl daemon-reload
 
+# install nginx
+yum install -y nginx
+cp nginx/*.conf /etc/nginx/conf.d/
+
 cd $PWD_DIR
