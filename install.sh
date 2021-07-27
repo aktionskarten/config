@@ -2,7 +2,7 @@
 
 set -ex
 
-SCRIPT_DIR=$(dirname "$0")
+SCRIPT_DIR=$(dirname $(realpath "$0"))
 PWD_DIR=$(pwd)
 
 # install docker
