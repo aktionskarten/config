@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -ex
+
 SCRIPT_DIR=$(dirname "$0")
 PWD_DIR=$(pwd)
 
