@@ -27,4 +27,6 @@ mkdir -p /etc/docker/compose
 ln -s $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
 ln -s $SCRIPT_DIR/tileserver-gl /etc/docker/compose/tileserver-gl
 
+systemctl daemon-reload
+
 cd $PWD_DIR
