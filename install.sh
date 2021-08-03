@@ -20,6 +20,7 @@ chmod +x /usr/local/bin/docker-compose
 cd $SCRIPT_DIR
 
 # checkout subrepos
+git pull --recurse-submodules
 git submodule update --init --recursive --remote
 
 # set up systemctl docker script
