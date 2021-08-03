@@ -7,7 +7,7 @@ services:
     volumes:
       - ./tileserver-gl:/data
   postgis:
-    image: "postgis/postgis-alpine"
+    image: "postgis/postgis:13.3.1-alpine"
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
     environment:
