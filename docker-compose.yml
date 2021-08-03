@@ -12,6 +12,8 @@ services:
       - ./postgres-data:/var/lib/postgresql/data
     env_file:
       - "postgres.env"
+    ports:
+      - "5432:5432"
   redis:
     image: "redis"
     ports:
@@ -19,7 +21,7 @@ services:
   web:
     image: kombinat451/aktionskarten-backend-app
     ports:
-      - "8081:80"
+      - "8081:5000"
     environment:
       - POSTGRES_HOST=postgis
       - REDIS_HOST=redis
