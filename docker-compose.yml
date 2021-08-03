@@ -22,10 +22,11 @@ services:
       - "6379:6379"
   web:
     image: kombinat451/aktionskarten-backend-app
-    ports: "8081:80"
+    ports:
+      - "8081:80"
     environment:
-      - POSTGRES_HOST: 'postgis'
-      - REDIS_HOST: 'redis'
+      - "POSTGRES_HOST": 'postgis'
+      - "REDIS_HOST": 'redis'
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
