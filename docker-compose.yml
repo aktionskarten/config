@@ -24,10 +24,10 @@ services:
     image: kombinat451/aktionskarten-backend-app
     ports: "8081:80"
     environment:
-      REDIS_HOST: 'redis'
-      DB_HOST: 'postgis'
-      DB_USER: "${POSTGRES_USER}"
-      DB_PASS: "${POSTGRES_PASS}"
-      DB_NAME: "${POSTGRES_DB}"
+      - POSTGRES_HOST: 'postgis'
+      - REDIS_HOST: 'redis'
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
     env_file:
       - "postgres.env"
