@@ -25,8 +25,8 @@ services:
     ports:
       - "8081:80"
     environment:
-      - "POSTGRES_HOST": 'postgis'
-      - "REDIS_HOST": 'redis'
+      - POSTGRES_HOST=postgis
+      - REDIS_HOST=redis
       - POSTGRES_USER
       - POSTGRES_PASSWORD
       - POSTGRES_DB
