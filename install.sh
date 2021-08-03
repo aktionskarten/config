@@ -20,12 +20,12 @@ chmod +x /usr/local/bin/docker-compose
 cd $SCRIPT_DIR
 
 # checkout subrepos
-git submodule update --init --recursive
+git submodule update --init --recursive --remote
 
 # set up systemctl docker script
 mkdir -p /etc/docker/compose
 ln -s $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
-ln -s $SCRIPT_DIR/tileserver-gl /etc/docker/compose/tileserver-gl
+ln -s $SCRIPT_DIR/ /etc/docker/compose/aktionskarten
 
 systemctl daemon-reload
 

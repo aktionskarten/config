@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  tileserver-gl:
+    image: "kombinat451/tileserver-gl"
+    ports:
+      - "8080:80"
+    volumes:
+      - ./tileserver-gl:/data
+  postgis:
+    image: "postgis/postgis-alpine"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+    env_file:
+      - "postgres.env"
+  redis:
+    image: "redis"
+    ports:
+      - "6379:6379"
+  web:
+    image: kombinat451/aktionskarten-backend-app
+    ports: "8081:80"
+    environment:
+      REDIS_HOST: 'redis'
+      DB_HOST: 'postgis'
+      DB_USER: "${POSTGRES_USER}"
+      DB_PASS: "${POSTGRES_PASS}"
+      DB_NAME: "${POSTGRES_DB}"
+    env_file:
+      - "postgres.env"
