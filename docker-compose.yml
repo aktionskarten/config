@@ -23,5 +23,6 @@ services:
     environment:
       - POSTGRES_HOST=postgis
       - REDIS_HOST=redis
+      - FLASK_ENV=production
     env_file:
       - "postgres.env"
