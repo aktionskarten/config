@@ -1,0 +1,44 @@
+server {
+	server_name backend.aktionskarten.org;
+
+	proxy_set_header   Host                 $http_host;
+	proxy_set_header   X-Forwarded-Proto    $scheme;
+	proxy_set_header   X-Forwarded-For      $remote_addr;
+	proxy_redirect     off;
+
+	# use very aggressive timeouts
+	proxy_read_timeout 5s;
+	proxy_send_timeout 5s;
+	send_timeout 5s;
+	resolver_timeout 5s;
+	client_body_timeout 5s;
+
+	# buffer larger messages
+	client_max_body_size 5m;
+	client_body_buffer_size 100k;
+
+	location / {
+		proxy_pass        http://localhost:8081;
+		add_header Strict-Transport-Security "max-age=31536000";
+	}
+
+    listen [::]:443 ssl; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/backend.aktionskarten.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/backend.aktionskarten.org/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = backend.aktionskarten.org) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+	listen   80;
+	listen   [::]:80;
+	server_name backend.aktionskarten.org;
+    return 404; # managed by Certbot
+}
+
