@@ -34,4 +34,7 @@ systemctl daemon-reload
 yum install -y nginx
 cp nginx/*.conf /etc/nginx/conf.d/
 
+systemctl enable nginx
+systemctl start nginx
+
 cd $PWD_DIR
