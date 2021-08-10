@@ -31,10 +31,15 @@ ln -s $SCRIPT_DIR/ /etc/docker/compose/aktionskarten
 systemctl daemon-reload
 
 # install nginx
-yum install -y nginx
+yum install -y epel-release
+yum install -y nginx certbot python3-certbot-nginx
 cp nginx/*.conf /etc/nginx/conf.d/
+
+certbot -n --agree-tos --email=kontakt@aktionskarten.org --nginx -d tiles.aktionskarten.org
+
 
 systemctl enable nginx
 systemctl start nginx
+
 
 cd $PWD_DIR
