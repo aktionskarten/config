@@ -15,5 +15,5 @@ Download them from [here](https://data.maptiler.com/downloads/planet/)
 Depending on the file you download you might want to update
 `tileserver-ng/config.json`.
 
-Afterwards you can start the tileserver with 
-`systemctl start docker-compose@tileserver-ng`
+Afterwards you can start aktionskarten with 
+`systemctl start docker-compose@aktionskarten`
