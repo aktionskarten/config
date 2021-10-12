@@ -37,12 +37,12 @@ yum install -y epel-release
 yum install -y nginx certbot python3-certbot-nginx
 cp nginx/*.conf /etc/nginx/conf.d/
 
+systemctl enable nginx
+systemctl start nginx
+
 certbot -n --agree-tos --email=kontakt@aktionskarten.org --nginx -d tiles.aktionskarten.org
 certbot -n --nginx -d backend.aktionskarten.org
 
-
-systemctl enable nginx
-systemctl start nginx
 
 
 cd $PWD_DIR
