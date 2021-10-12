@@ -21,7 +21,7 @@ cd $SCRIPT_DIR
 
 # checkout subrepos
 git pull --recurse-submodules
-git submodule update --init --recursive --remote
+git submodule update --init --recursive
 
 # set up systemctl docker script
 mkdir -p /etc/docker/compose
@@ -36,6 +36,7 @@ yum install -y nginx certbot python3-certbot-nginx
 cp nginx/*.conf /etc/nginx/conf.d/
 
 certbot -n --agree-tos --email=kontakt@aktionskarten.org --nginx -d tiles.aktionskarten.org
+certbot -n --nginx -d backend.aktionskarten.org
 
 
 systemctl enable nginx
