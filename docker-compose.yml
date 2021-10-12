@@ -24,7 +24,7 @@ services:
       - "127.0.0.1:8081:5000"
     environment:
       - POSTGRES_HOST=postgis
-      - REDIS_HOST=redis
+      - REDIS_HOS=redis
       - TILESERVER_HOST=tileserver-gl:8080
       - FLASK_ENV=production
     env_file:
