@@ -25,8 +25,8 @@ git submodule update --init --recursive
 
 # set up systemctl docker script
 mkdir -p /etc/docker/compose
-ln -s $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
-ln -s $SCRIPT_DIR/ /etc/docker/compose/aktionskarten
+ln -sf $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
+ln -sf $SCRIPT_DIR/ /etc/docker/compose/aktionskarten
 
 systemctl daemon-reload
 
