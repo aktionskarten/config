@@ -5,6 +5,9 @@ set -ex
 SCRIPT_DIR=$(dirname $(realpath "$0"))
 PWD_DIR=$(pwd)
 
+# stop aktionskarten if already running
+systemctl stop docker-compose@aktionskarten || true
+
 # install docker
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
@@ -54,5 +57,7 @@ systemctl start nginx
 certbot -n --agree-tos --email=kontakt@aktionskarten.org --nginx -d tiles.aktionskarten.org
 certbot -n --nginx -d backend.aktionskarten.org
 certbot -n --nginx -d frontend.aktionskarten.org
+
+systemctl start docker-compose@aktionkarten
 
 cd $PWD_DIR
