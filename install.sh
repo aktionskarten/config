@@ -32,6 +32,16 @@ ln -sf $SCRIPT_DIR/ /etc/docker/compose/aktionskarten
 
 systemctl daemon-reload
 
+# set up frontend
+cd $SCRIPT_DIR/frontend
+yum install npm
+npm install
+npm build
+
+mkdir -p /var/www/
+mv dist /var/www/aktionskarten-frontend
+chown -R www:www /var/www/
+
 # install nginx
 yum install -y epel-release
 yum install -y nginx certbot python3-certbot-nginx
@@ -42,7 +52,6 @@ systemctl start nginx
 
 certbot -n --agree-tos --email=kontakt@aktionskarten.org --nginx -d tiles.aktionskarten.org
 certbot -n --nginx -d backend.aktionskarten.org
-
-
+certbot -n --nginx -d frontend.aktionskarten.org
 
 cd $PWD_DIR

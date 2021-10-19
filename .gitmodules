@@ -13,3 +13,6 @@
 [submodule "tileserver-gl/styles/tileserver-gl-styles"]
 	path = tileserver-gl/styles/tileserver-gl-styles
 	url = https://github.com/klokantech/tileserver-gl-styles.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/aktionskarten/frontend.git
