@@ -36,6 +36,7 @@ systemctl daemon-reload
 cd $SCRIPT_DIR/frontend
 yum install npm
 npm install
+echo "API_ENDPOINT=https://backend.aktionskarten.org" > .env
 npm build
 
 mkdir -p /var/www/
