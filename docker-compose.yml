@@ -20,6 +20,10 @@ services:
       - "127.0.0.1:6379:6379"
   web:
     image: kombinat451/aktionskarten-backend-app
+    depends_on:
+      - tileserver-gl
+      - postgis
+      - redis
     ports:
       - "127.0.0.1:8081:5000"
     environment:
