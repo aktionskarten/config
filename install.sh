@@ -40,7 +40,7 @@ cd $SCRIPT_DIR/frontend
 yum install -y npm
 npm install --only=prod
 echo "API_ENDPOINT=https://backend.aktionskarten.org" > .env
-npm build
+npm run build
 
 mkdir -p /var/www/
 mv dist /var/www/aktionskarten-frontend
