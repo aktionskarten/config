@@ -47,7 +47,7 @@ npm run --silent build
 
 mkdir -p /var/www/aktionskarten-frontend/
 mv dist/* /var/www/aktionskarten-frontend/
-chown -R www:www /var/www/
+chown -R nginx:nginx /var/www/
 
 # install nginx
 yum install -y epel-release
