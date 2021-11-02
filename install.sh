@@ -43,7 +43,7 @@ rm -rf node_modules
 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install --quiet
 
 echo "API_ENDPOINT=https://backend.aktionskarten.org" > .env
-npm run build
+npm run --silent build
 
 mkdir -p /var/www/aktionskarten-frontend/
 mv dist/* /var/www/aktionskarten-frontend/
