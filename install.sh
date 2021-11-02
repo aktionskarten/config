@@ -36,9 +36,12 @@ ln -sf $SCRIPT_DIR/ /etc/docker/compose/aktionskarten
 systemctl daemon-reload
 
 # set up frontend
-cd $SCRIPT_DIR/frontend
 yum install -y npm
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install
+
+cd $SCRIPT_DIR/frontend
+rm -rf node_modules
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install --quiet
+
 echo "API_ENDPOINT=https://backend.aktionskarten.org" > .env
 npm run build
 
