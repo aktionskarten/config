@@ -45,8 +45,8 @@ PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install --quiet
 echo "API_ENDPOINT=https://backend.aktionskarten.org" > .env
 npm run build
 
-mkdir -p /var/www/
-mv dist /var/www/aktionskarten-frontend
+mkdir -p /var/www/aktionskarten-frontend/
+mv dist/* /var/www/aktionskarten-frontend/
 chown -R www:www /var/www/
 
 # install nginx
@@ -55,7 +55,7 @@ yum install -y nginx certbot python3-certbot-nginx
 cp nginx/*.conf /etc/nginx/conf.d/
 
 systemctl enable nginx
-systemctl start nginx
+systemctl restart nginx
 
 certbot -n --agree-tos --email=kontakt@aktionskarten.org --nginx -d tiles.aktionskarten.org
 certbot -n --nginx -d backend.aktionskarten.org
