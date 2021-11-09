@@ -31,8 +31,8 @@ curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compo
 chmod +x /usr/local/bin/docker-compose
 
 ### checkout subrepos
-git pull --recurse-submodules
 git submodule update --init --recursive
+git pull --recurse-submodules
 
 ### set up systemctl docker script
 mkdir -p /etc/docker/compose
