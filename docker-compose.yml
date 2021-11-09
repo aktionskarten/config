@@ -18,7 +18,7 @@ services:
     image: "redis"
     ports:
       - "127.0.0.1:6379:6379"
-  web:
+  backend:
     image: kombinat451/aktionskarten-backend-app
     depends_on:
       - tileserver-gl
@@ -30,6 +30,6 @@ services:
       - POSTGRES_HOST=postgis
       - REDIS_HOST=redis
       - TILESERVER_HOST=tileserver-gl:8080
-      - FLASK_ENV=production
     env_file:
       - "postgres.env"
+      - "backend.env"
