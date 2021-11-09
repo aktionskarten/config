@@ -5,8 +5,8 @@ set -ex
 CERTBOT_EMAIL="kontakt@aktionskarten.org"
 
 BACKEND_URL="backend.aktionskarten.org"
-TILES_URL="tiles.aktionksarten.org"
-FRONTEND_URL="frontend.aktionksarten.org"
+TILES_URL="tiles.aktionskarten.org"
+FRONTEND_URL="frontend.aktionskarten.org"
 
 
 ### get directories
