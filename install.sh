@@ -38,7 +38,6 @@ git submodule update --init --recursive
 mkdir -p /etc/docker/compose
 cp $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
 ln -s $SCRIPT_DIR /etc/docker/compose/aktionskarten
-systemctl daemon-reload
 
 ### set up frontend
 cd $SCRIPT_DIR/frontend
@@ -67,5 +66,6 @@ certbot -n --agree-tos --email=$CERTBOT_EMAIL --nginx -d $TILES_URL
 certbot -n --nginx -d $BACKEND_URL
 certbot -n --nginx -d $FRONTEND_URL
 
+systemctl daemon-reload
 systemctl start docker-compose@aktionkarten
 
