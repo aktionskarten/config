@@ -16,10 +16,9 @@ SCRIPT_DIR=$(dirname $(realpath "$0"))
 systemctl stop docker-compose@aktionskarten || true
 
 ### install docker
-# add docker repo
 yum install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-# install and start/enable docker
+
 yum install -y docker-ce docker-ce-cli containerd.io
 systemctl start docker
 systemctl enable docker
@@ -38,6 +37,7 @@ git submodule update --init --recursive
 ### set up systemctl docker script
 mkdir -p /etc/docker/compose
 cp $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
+ln -s $SCRIPT_DIR /etc/docker/compose/aktionskarten
 systemctl daemon-reload
 
 ### set up frontend
