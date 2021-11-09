@@ -1,3 +1,0 @@
-CREATE EXTENSION IF NOT EXISTS postgis;
-SELECT 'CREATE DATABASE maps'
-WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'maps')\gexec
