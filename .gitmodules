@@ -16,3 +16,6 @@
 [submodule "frontend"]
 	path = frontend
 	url = https://github.com/aktionskarten/frontend.git
+[submodule "tileserver-gl/tiles"]
+	path = tileserver-gl/tiles
+	url = git@github.com:aktionskarten/tileserver-gl-data.git
