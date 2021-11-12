@@ -69,5 +69,5 @@ certbot -n --agree-tos --email=$CERTBOT_EMAIL --nginx -d $TILES_URL --quiet
 certbot -n --nginx -d $BACKEND_URL --quiet
 certbot -n --nginx -d $FRONTEND_URL --quiet
 
-systemctl start docker-compose@aktionkarten
+systemctl start docker-compose@aktionskarten
 
