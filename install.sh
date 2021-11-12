@@ -62,9 +62,9 @@ cp nginx/*.conf /etc/nginx/conf.d/
 systemctl enable nginx
 systemctl restart nginx
 
-certbot -n --agree-tos --email=$CERTBOT_EMAIL --nginx -d $TILES_URL
-certbot -n --nginx -d $BACKEND_URL
-certbot -n --nginx -d $FRONTEND_URL
+certbot -n --agree-tos --email=$CERTBOT_EMAIL --nginx -d $TILES_URL --quiet
+certbot -n --nginx -d $BACKEND_URL --quiet
+certbot -n --nginx -d $FRONTEND_URL --quiet
 
 systemctl daemon-reload
 systemctl start docker-compose@aktionkarten
