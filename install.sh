@@ -16,16 +16,16 @@ SCRIPT_DIR=$(dirname $(realpath "$0"))
 systemctl stop docker-compose@aktionskarten || true
 
 ### install docker
-yum install -y yum-utils
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install -y yum-utils -q
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo -q
 
-yum install -y docker-ce docker-ce-cli containerd.io
+yum install -y docker-ce docker-ce-cli containerd.io -q
 systemctl start docker
 systemctl enable docker
 
 
 ### install docker-compose
-yum install -y curl
+yum install -y curl -q
 rm -f /usr/local/bin/docker-compose
 curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
@@ -41,7 +41,7 @@ ln -s $SCRIPT_DIR /etc/docker/compose/aktionskarten
 
 ### set up frontend
 cd $SCRIPT_DIR/frontend
-yum install -y npm
+yum install -y npm -q
 rm -rf node_modules
 PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install --quiet
 
@@ -55,8 +55,8 @@ chown -R nginx:nginx /var/www/
 cd $SCRIPT_DIR
 
 ### install nginx
-yum install -y epel-release
-yum install -y nginx certbot python3-certbot-nginx
+yum install -y epel-release -q
+yum install -y nginx certbot python3-certbot-nginx -q
 cp nginx/*.conf /etc/nginx/conf.d/
 
 systemctl enable nginx
