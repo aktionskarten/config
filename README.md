@@ -1,19 +1,31 @@
-# config
+# Install script for CentOS 8
 
-Check out this repository on an CentOS 8 server.
-Don't forget to install git first: `yum install -y git`
+**This script assumes the server is only used for aktionskarten!
+Files will get removed without further checks!**
 
-Run `install.sh` to
-* check out subrepositories (including styles for the tileserver)
-* install docker
-* install docker-compose
-* set up docker-compose@.service
-* configure tileserver-ng to run with docker-compose@.service
 
-**You need to download the tile files into `config/tileserver-ng/tiles`**
-Download them from [here](https://data.maptiler.com/downloads/planet/)  
-Depending on the file you download you might want to update
-`tileserver-ng/config.json`.
+## How to 
+1. Check out this repository on an CentOS 8 server.
+   Don't forget to install git first: `yum install -y git`
+   This script assumes git is already installed.
+2. Get the tiles
+2. Configure the script.
+2. Run `install.sh`
 
-Afterwards you can start aktionskarten with 
-`systemctl start docker-compose@aktionskarten`
+## Getting the tiles
+The tiles must be provided in [mbtiles](https://wiki.openstreetmap.org/wiki/MBTiles)
+You can get the tiles for example from [maptiler](https://data.maptiler.com/downloads/planet/)
+Place the files in a folder `tiles` in this repo and name the files `tiles.mbtiles`.
+
+## Configuring the script
+TODO
+
+## Techincal background
+
+Running `install.sh` will setup a server with all necessary parts to run `aktionskarten`.
+
+This script uses `docker-compose` to run the [backend](https://github.com/aktionskarten/backend) with the dependencies [tileserver-gl](https://github.com/aktionskarten/tileserver-gl), [redis](https://redis.io/) and a postgis database.
+
+Then [nginx](https://nginx.com) is configured as a reverse proxy, but also serves the [frontend](https://github.com/aktionskarten/frontend) as static content.
+
+[Certbot](https://certbot.eff.org/) is used to generate SSL certificates to the given URLS.
