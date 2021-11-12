@@ -34,6 +34,7 @@ git pull --recurse-submodules --quiet
 cp $SCRIPT_DIR/docker-compose@.service /etc/systemd/system/docker-compose@.service
 
 ### set up systemctl aktionskarten service
+unlink /etc/docker/compose/aktionskarten || true
 mkdir -p /etc/docker/compose/aktionskarten
 rm -rf /etc/docker/compose/aktionskarten/*
 mv $SCRIPT_DIR/docker-compose /etc/docker/compose/aktionskarten

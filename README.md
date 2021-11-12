@@ -18,7 +18,9 @@ You can get the tiles for example from [maptiler](https://data.maptiler.com/down
 Place the files in a folder `tiles` in this repo and name the files `tiles.mbtiles`.
 
 ## Configuring the script
-TODO
+Adapt the variables in `config` accordingly.
+
+You need to set an email-adress, a frontend, backend and tileserver URL.
 
 ## Techincal background
 
