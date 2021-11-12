@@ -39,6 +39,7 @@ git pull --recurse-submodules --quiet
 mkdir -p /etc/docker/compose
 cp $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
 ln -sfn $SCRIPT_DIR /etc/docker/compose/aktionskarten
+systemctl daemon-reload
 
 ### set up frontend
 cd $SCRIPT_DIR/frontend
@@ -68,6 +69,5 @@ certbot -n --agree-tos --email=$CERTBOT_EMAIL --nginx -d $TILES_URL --quiet
 certbot -n --nginx -d $BACKEND_URL --quiet
 certbot -n --nginx -d $FRONTEND_URL --quiet
 
-systemctl daemon-reload
 systemctl start docker-compose@aktionkarten
 
