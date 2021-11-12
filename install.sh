@@ -37,7 +37,7 @@ cp $SCRIPT_DIR/docker-compose@.service /etc/systemd/system/docker-compose@.servi
 unlink /etc/docker/compose/aktionskarten || true
 mkdir -p /etc/docker/compose/aktionskarten
 rm -rf /etc/docker/compose/aktionskarten/*
-mv $SCRIPT_DIR/docker-compose /etc/docker/compose/aktionskarten
+cp $SCRIPT_DIR/docker-compose/* /etc/docker/compose/aktionskarten
 systemctl daemon-reload
 
 ### set up frontend
