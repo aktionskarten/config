@@ -15,12 +15,13 @@ Files will get removed without further checks!**
 ## Getting the tiles
 The tiles must be provided in [mbtiles](https://wiki.openstreetmap.org/wiki/MBTiles)
 You can get the tiles for example from [maptiler](https://data.maptiler.com/downloads/planet/)
-Place the files in a folder `tiles` in this repo and name the files `tiles.mbtiles`.
 
 ## Configuring the script
 Adapt the variables in `config` accordingly.
 
 You need to set an email-adress, a frontend, backend and tileserver URL.
+
+Set the correct path for the mbtiles file you just downloaded.
 
 ## Techincal background
 

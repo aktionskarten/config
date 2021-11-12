@@ -6,4 +6,8 @@ BACKEND_URL="backend.aktionskarten.org"
 TILES_URL="tiles.aktionskarten.org"
 FRONTEND_URL="frontend.aktionskarten.org"
 
+# Set the path where the postgres data will be stored
+POSTGRES_DATA_PATH=/root/postgres-data
 
+# Set the path where the mbtiles are stored
+TILES_PATH=/root/europe.mbtiles
