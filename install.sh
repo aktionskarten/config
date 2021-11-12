@@ -49,6 +49,7 @@ echo "API_ENDPOINT=https://$BACKEND_URL" > .env
 npm run build > /dev/null
 
 mkdir -p /var/www/aktionskarten-frontend/
+rm -rf /var/www/aktionskarten-frontend/*
 mv dist/* /var/www/aktionskarten-frontend/
 chown -R nginx:nginx /var/www/
 
