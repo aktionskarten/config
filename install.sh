@@ -43,7 +43,7 @@ ln -sfn $SCRIPT_DIR /etc/docker/compose/aktionskarten
 cd $SCRIPT_DIR/frontend
 yum install -y npm -q
 rm -rf node_modules
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install > /dev/null
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install &> /dev/null
 
 echo "API_ENDPOINT=https://$BACKEND_URL" > .env
 npm run build > /dev/null
