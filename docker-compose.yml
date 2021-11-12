@@ -3,7 +3,7 @@ services:
   tileserver-gl:
     image: "kombinat451/tileserver-gl"
     ports:
-      - "127.0.0.1:8080:80"
+      - "127.0.0.1:1312:80"
     volumes:
       - ./tileserver-gl:/data
   postgis:
@@ -25,7 +25,7 @@ services:
       - postgis
       - redis
     ports:
-      - "127.0.0.1:8081:5000"
+      - "127.0.0.1:5000:5000"
     environment:
       - POSTGRES_HOST=postgis
       - REDIS_HOST=redis
