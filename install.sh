@@ -37,13 +37,13 @@ git pull --recurse-submodules --quiet
 ### set up systemctl docker script
 mkdir -p /etc/docker/compose
 cp $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
-ln -s $SCRIPT_DIR /etc/docker/compose/aktionskarten
+ln -sf $SCRIPT_DIR /etc/docker/compose/aktionskarten
 
 ### set up frontend
 cd $SCRIPT_DIR/frontend
 yum install -y npm -q
 rm -rf node_modules
-PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install --silent
+PUPPETEER_SKIP_CHROMIUM_DOWNLOAD="1" npm install > /dev/null
 
 echo "API_ENDPOINT=https://$BACKEND_URL" > .env
 npm run --silent build
