@@ -13,6 +13,7 @@ FRONTEND_URL="frontend.aktionskarten.org"
 SCRIPT_DIR=$(dirname $(realpath "$0"))
 
 ### stop aktionskarten if already running
+systemctl stop nginx || true
 systemctl stop docker-compose@aktionskarten || true
 
 ### install docker
@@ -51,7 +52,7 @@ npm run build &> /dev/null
 mkdir -p /var/www/aktionskarten-frontend/
 rm -rf /var/www/aktionskarten-frontend/*
 mv dist/* /var/www/aktionskarten-frontend/
-chown -R nginx:nginx /var/www/
+chown -R n ginx:nginx /var/www/
 
 cd $SCRIPT_DIR
 
@@ -61,7 +62,7 @@ yum install -y nginx certbot python3-certbot-nginx -q
 cp nginx/*.conf /etc/nginx/conf.d/
 
 systemctl enable nginx
-systemctl restart nginx
+systemctl start nginx
 
 certbot -n --agree-tos --email=$CERTBOT_EMAIL --nginx -d $TILES_URL --quiet
 certbot -n --nginx -d $BACKEND_URL --quiet
