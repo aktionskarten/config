@@ -37,7 +37,7 @@ git pull --recurse-submodules --quiet
 ### set up systemctl docker script
 mkdir -p /etc/docker/compose
 cp $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
-ln -sf $SCRIPT_DIR /etc/docker/compose/aktionskarten
+ln -sfh $SCRIPT_DIR /etc/docker/compose/aktionskarten
 
 ### set up frontend
 cd $SCRIPT_DIR/frontend
