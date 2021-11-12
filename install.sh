@@ -52,7 +52,7 @@ npm run build &> /dev/null
 mkdir -p /var/www/aktionskarten-frontend/
 rm -rf /var/www/aktionskarten-frontend/*
 mv dist/* /var/www/aktionskarten-frontend/
-chown -R n ginx:nginx /var/www/
+chown -R nginx:nginx /var/www/
 
 cd $SCRIPT_DIR
 
