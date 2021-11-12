@@ -2,12 +2,7 @@
 
 set -ex
 
-CERTBOT_EMAIL="kontakt@aktionskarten.org"
-
-BACKEND_URL="backend.aktionskarten.org"
-TILES_URL="tiles.aktionskarten.org"
-FRONTEND_URL="frontend.aktionskarten.org"
-
+source config
 
 ### get directories
 SCRIPT_DIR=$(dirname $(realpath "$0"))
@@ -37,7 +32,7 @@ git pull --recurse-submodules --quiet
 
 ### set up systemctl docker script
 mkdir -p /etc/docker/compose
-cp $SCRIPT_DIR/server/docker-compose@.service /etc/systemd/system/docker-compose@.service
+cp $SCRIPT_DIR/docker-compose@.service /etc/systemd/system/docker-compose@.service
 ln -sfn $SCRIPT_DIR /etc/docker/compose/aktionskarten
 systemctl daemon-reload
 

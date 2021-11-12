@@ -26,6 +26,8 @@ Running `install.sh` will setup a server with all necessary parts to run `aktion
 
 This script uses `docker-compose` to run the [backend](https://github.com/aktionskarten/backend) with the dependencies [tileserver-gl](https://github.com/aktionskarten/tileserver-gl), [redis](https://redis.io/) and a postgis database.
 
+Docker-compose will be run by a systemd service `docker-compose@aktionskarten`.
+
 Then [nginx](https://nginx.com) is configured as a reverse proxy, but also serves the [frontend](https://github.com/aktionskarten/frontend) as static content.
 
 [Certbot](https://certbot.eff.org/) is used to generate SSL certificates to the given URLS.

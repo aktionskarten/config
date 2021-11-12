@@ -1,0 +1,9 @@
+# your email address that will be used with certbot script
+CERTBOT_EMAIL="kontakt@aktionskarten.org"
+
+# the URLS you want to use for backend, tileserver-gl and the frontend
+BACKEND_URL="backend.aktionskarten.org"
+TILES_URL="tiles.aktionskarten.org"
+FRONTEND_URL="frontend.aktionskarten.org"
+
+
