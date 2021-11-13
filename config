@@ -10,4 +10,4 @@ FRONTEND_URL="frontend.aktionskarten.org"
 POSTGRES_DATA_PATH=/root/postgres-data
 
 # Set the path where the mbtiles are stored
-TILES_PATH=/root/europe.mbtiles
+TILES_PATH=/root/tiles/
