@@ -13,7 +13,7 @@ systemctl stop docker-compose@aktionskarten || true
 
 ### configure autoupdates
 yum install -y dnf-automatic -q
-envsubst < dnf-automatic/dnf-automatic.conf > /etc/dnf/automatic.conf
+envsubst < dnf-automatic/automatic.conf > /etc/dnf/automatic.conf
 systemctl enable --now dnf-automatic.timer
 
 ### install docker
