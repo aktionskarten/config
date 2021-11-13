@@ -6,7 +6,8 @@ set -ex
 grep -v '^#' config | grep -v '^$' | while read p; do
   export "$p"
 done
-
+### and we need to source it to use the variables in this script
+source config
 
 ### get directories
 SCRIPT_DIR=$(dirname $(realpath "$0"))
