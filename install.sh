@@ -11,6 +11,11 @@ SCRIPT_DIR=$(dirname $(realpath "$0"))
 systemctl stop nginx || true
 systemctl stop docker-compose@aktionskarten || true
 
+### configure autoupdates
+yum install -y dnf-automatic -q
+cp -f dnf-automatic/dnf-automatic.conf /etc/dnf/automatic.conf
+systemctl enable --now dnf-automatic.timer
+
 ### install docker
 yum install -y yum-utils -q
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo -q
@@ -18,7 +23,6 @@ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce
 yum install -y docker-ce docker-ce-cli containerd.io -q
 systemctl start docker
 systemctl enable docker
-
 
 ### install docker-compose
 yum install -y curl -q
@@ -66,7 +70,7 @@ cp nginx/*.conf /etc/nginx/conf.d/
 systemctl enable nginx
 systemctl start nginx
 
-certbot -n --agree-tos --email=$CERTBOT_EMAIL --nginx -d $TILES_URL --quiet
+certbot -n --agree-tos --email=$EMAIL --nginx -d $TILES_URL --quiet
 certbot -n --nginx -d $BACKEND_URL --quiet
 certbot -n --nginx -d $FRONTEND_URL --quiet
 

@@ -39,3 +39,5 @@ Docker-compose will be run by a systemd service `docker-compose@aktionskarten`.
 Then [nginx](https://nginx.com) is configured as a reverse proxy, but also serves the [frontend](https://github.com/aktionskarten/frontend) as static content.
 
 [Certbot](https://certbot.eff.org/) is used to generate SSL certificates to the given URLS.
+
+`dnf-automatic` is configured to automatically install updates and keep the server up to date. You will get emails to the `EMAIL` adress in the configuration from `root@${BACKEND_URL}`.
