@@ -2,7 +2,11 @@
 
 set -ex
 
-source config
+### we need to export every variable so we can use envsubst later on
+while read p; do
+  export "$p"
+done <config
+
 
 ### get directories
 SCRIPT_DIR=$(dirname $(realpath "$0"))

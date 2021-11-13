@@ -1,10 +1,10 @@
 # your email address that will be used with certbot script and used to send update infos
-EMAIL="kontakt@aktionskarten.org"
+EMAIL=kontakt@aktionskarten.org
 
 # the URLS you want to use for backend, tileserver-gl and the frontend
-BACKEND_URL="backend.aktionskarten.org"
-TILES_URL="tiles.aktionskarten.org"
-FRONTEND_URL="frontend.aktionskarten.org"
+BACKEND_URL=backend.aktionskarten.org
+TILES_URL=tiles.aktionskarten.org
+FRONTEND_URL=frontend.aktionskarten.org
 
 # Set the path where the postgres data will be stored
 POSTGRES_DATA_PATH=/root/postgres-data
