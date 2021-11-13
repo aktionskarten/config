@@ -3,7 +3,7 @@
 set -ex
 
 ### we need to export every variable so we can use envsubst later on
-grep -v '^#' config | while read p; do
+grep -v '^#' config | grep -v '^$' | while read p; do
   export "$p"
 done
 
