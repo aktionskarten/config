@@ -1,3 +1,5 @@
+##THIS SCRIPT IS STILL WORK IN PROGRESS AND SHOULD NOT YET BE USED
+
 # Install script for CentOS 8
 
 **This script assumes the server is only used for aktionskarten!
