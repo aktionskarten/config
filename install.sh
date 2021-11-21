@@ -70,7 +70,9 @@ cd $SCRIPT_DIR
 ### install nginx
 yum install -y epel-release -q
 yum install -y nginx certbot python3-certbot-nginx -q
+rm -rf /etc/nginx/conf.d/*
 cp nginx/*.conf /etc/nginx/conf.d/
+mv /etc/nginx/conf.d/nginx.conf /etc/nginx/
 
 systemctl enable nginx
 systemctl start nginx
