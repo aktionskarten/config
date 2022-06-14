@@ -12,6 +12,7 @@ echo "Updating & Upgrading…"
 apk update
 apk upgrade --available
 
+
 echo "Installing docker…"
 # Install
 apk add docker docker-compose
