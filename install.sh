@@ -29,7 +29,7 @@ addgroup -S dockremap
 echo dockremap:$(cat /etc/passwd|grep dockremap|cut -d: -f3):65536 >> /etc/subuid
 echo dockremap:$(cat /etc/passwd|grep dockremap|cut -d: -f4):65536 >> /etc/subgid
 # copy daemon conf file
-cp docker/daemon.conf /etc/docker/daemon.conf
+cp docker/daemon.json /etc/docker/daemon.json
 
 
 echo "Installing nginx and configuring as reverse proxy…"
