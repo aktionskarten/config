@@ -1,0 +1,15 @@
+[submodule "tileserver-gl/styles/dark-matter-gl-style"]
+	path = tileserver-gl/styles/dark-matter-gl-style
+	url = https://github.com/aktionskarten/dark-matter-gl-style.git
+[submodule "tileserver-gl/styles/positron-gl-style"]
+	path = tileserver-gl/styles/positron-gl-style
+	url = https://github.com/aktionskarten/positron-gl-style.git
+[submodule "tileserver-gl/styles/osm-bright-gl-style"]
+	path = tileserver-gl/styles/osm-bright-gl-style
+	url = https://github.com/aktionskarten/osm-bright-gl-style.git
+[submodule "tileserver-gl/styles/osm-liberty-gl-style"]
+	path = tileserver-gl/styles/osm-liberty-gl-style
+	url = https://github.com/aktionskarten/osm-liberty-gl-style.git
+[submodule "tileserver-gl/styles/tileserver-gl-styles"]
+	path = tileserver-gl/styles/tileserver-gl-styles
+	url = https://github.com/aktionskarten/tileserver-gl-styles.git
