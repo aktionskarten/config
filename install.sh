@@ -34,7 +34,7 @@ cp docker/daemon.json /etc/docker/daemon.json
 
 echo "Installing nginx and configuring as reverse proxy…"
 apk add nginx certbot certbot-nginx
-adduser -D -g 'www' www
+adduser -D -g 'www' www || true
 chown -R www:www /var/lib/nginx
 rc-update add nginx default
 # copy config files
