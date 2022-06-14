@@ -55,5 +55,6 @@ chmod +x /etc/init.d/dockerservice
 mkdir -p /root/docker/aktionskarten
 ln -s $SCRIPT_DIR/docker-compose/ /root/docker/aktionskarten || true
 ln -s /etc/init.d/dockerservice /etc/init.d/dockerservice.aktionskarten || true
+cp $SCRIPT_DIR/config /root/docker/aktionskarten/.env
 rc-update add dockerservice.aktionskarten default
 rc-service dockerservice.aktionskarten start
