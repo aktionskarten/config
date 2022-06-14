@@ -24,8 +24,8 @@ service docker start
 
 echo "Configuring docker…"
 # Isolate containers with a user namespace
-adduser -SDHs /sbin/nologin dockremap
-addgroup -S dockremap
+adduser -SDHs /sbin/nologin dockremap || true
+addgroup -S dockremap || true
 echo dockremap:$(cat /etc/passwd|grep dockremap|cut -d: -f3):65536 >> /etc/subuid
 echo dockremap:$(cat /etc/passwd|grep dockremap|cut -d: -f4):65536 >> /etc/subgid
 # copy daemon conf file
