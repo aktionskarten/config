@@ -51,6 +51,7 @@ certbot -n --nginx -d $FRONTEND_URL --quiet
 
 echo "Configure openrc service script…"
 cp openrc/dockerservice /etc/init.d/dockerservice
+mkdir -p /root/docker/aktionskarten
 ln -s docker-compose/ /root/docker/aktionskarten
 ln -s /etc/init.d/dockerservice /etc/init.d/dockerservice.aktionskarten
 rc-update add dockerservice.aktionskarten default
