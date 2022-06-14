@@ -1,0 +1,7 @@
+{  
+  "userns-remap": "dockremap",
+  "experimental": false,
+  "live-restore": true,
+  "ipv6": false,
+  "no-new-privileges": true 
+}
