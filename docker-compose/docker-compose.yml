@@ -34,3 +34,7 @@ services:
     env_file:
       - "postgis.env"
       - "backend.env"
+  frontend:
+    image: kombinat451/aktionskarten-frontend
+    ports:
+      - "8080:80"
