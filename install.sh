@@ -44,9 +44,9 @@ rc-service nginx start
 
 
 echo "Using certbot to get certificates…"
-certbot -n --agree-tos --email=$EMAIL --nginx -d $TILES_URL --quiet
-certbot -n --nginx -d $BACKEND_URL --quiet
-certbot -n --nginx -d $FRONTEND_URL --quiet
+certbot -n --agree-tos --email=$EMAIL --nginx -d $TILES_URL --quiet --reinstall
+certbot -n --nginx -d $BACKEND_URL --quiet --reinstall
+certbot -n --nginx -d $FRONTEND_URL --quiet --reinstall
 
 
 echo "Configure openrc service script…"
