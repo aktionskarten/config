@@ -12,10 +12,4 @@
 	url = https://github.com/aktionskarten/osm-liberty-gl-style.git
 [submodule "tileserver-gl/styles/tileserver-gl-styles"]
 	path = tileserver-gl/styles/tileserver-gl-styles
-	url = https://github.com/klokantech/tileserver-gl-styles.git
-[submodule "frontend"]
-	path = frontend
-	url = https://github.com/aktionskarten/frontend.git
-[submodule "tileserver-gl/tiles"]
-	path = tileserver-gl/tiles
-	url = https://github.com/aktionskarten/tileserver-gl-data.git
+	url = https://github.com/aktionskarten/tileserver-gl-styles.git
