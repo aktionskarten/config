@@ -53,7 +53,7 @@ echo "Configure openrc service script…"
 cp openrc/dockerservice /etc/init.d/dockerservice
 chmod +x /etc/init.d/dockerservice
 mkdir -p /root/docker/aktionskarten
-ln -s docker-compose/ /root/docker/aktionskarten || true
+ln -s $SCRIPT_DIR/docker-compose/ /root/docker/aktionskarten || true
 ln -s /etc/init.d/dockerservice /etc/init.d/dockerservice.aktionskarten || true
 rc-update add dockerservice.aktionskarten default
 rc-service dockerservice.aktionskarten start
